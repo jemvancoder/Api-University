@@ -14,10 +14,12 @@ namespace Data.Providers
 		/// <param name="professor"> The professor object to create. </param>
 		void Create(Professor professor);
 
+		Professor GetProfessorById(int professorId);
+
 		/// <summary>
 		///		Gets all professors. 
 		/// </summary>
 		/// <returns></returns>
-		IEnumerable<Professor> GetAll(); 
+		IReadOnlyCollection<Professor> GetAll(); 
 	}
 }

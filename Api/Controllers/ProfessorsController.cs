@@ -1,6 +1,7 @@
 ﻿using Api.Models;
 using Data.Providers;
 using Microsoft.AspNetCore.Mvc;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -20,7 +21,7 @@ namespace Api.Controllers
 		/// <param name="professorProvider"> Provider for professor information. </param>
 		public ProfessorsController(IProfessorProvider professorProvider)
 		{
-			_professorProvider = professorProvider;
+			_professorProvider = professorProvider ?? throw new ArgumentNullException(nameof(_professorProvider));
 		}
 
 		/// <summary>
@@ -28,7 +29,7 @@ namespace Api.Controllers
 		/// </summary>
 		[HttpGet]
 		[Route("api/professors")]
-		public IEnumerable<ProfessorModel> Get()
+		public IReadOnlyCollection<ProfessorModel> Get()
 		{
 			var professors = _professorProvider.GetAll()
 				.Select(professor =>
@@ -37,7 +38,7 @@ namespace Api.Controllers
 						Id = professor.Id,
 						Name = professor.Name
 					});
-			return professors;
+			return professors.ToList();
 		}
 	}
 }

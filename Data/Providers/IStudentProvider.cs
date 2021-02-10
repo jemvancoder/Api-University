@@ -1,5 +1,6 @@
 ﻿using Data.Common;
 using Data.Entities;
+using System.Collections.Generic;
 
 namespace Data.Providers
 {
@@ -13,5 +14,8 @@ namespace Data.Providers
 		/// </summary>
 		/// <param name="student"> The student object to create. </param>
 		void Create(Student student);
+
+		Student GetStudentById(int studentId);
+		IReadOnlyCollection<Student> GetAll();
 	}
 }
