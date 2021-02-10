@@ -131,7 +131,7 @@ namespace Api
 			var enrollment = enrollmentProvider.Enroll(new Student { Id = 1 }, new Course { Id = 1 }, new Professor { Id = 2 });
 			Console.WriteLine($"Student: {enrollment.Student.Name} enrolled into {enrollment.Course.Name}!");
 
-			// BUG: This line fails, need to find the cause and correct the issue. 
+			// BUG: This line fails, need to find the cause and correct the issue. -- corrected for Requirement #1 
 			Console.WriteLine($"Student: {enrollment.Student.Name} enrolled into {enrollment.Course.Name} instructed by {enrollment.Professor.Name}!");
 
 			Console.WriteLine();

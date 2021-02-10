@@ -22,6 +22,11 @@ namespace Api.Controllers
             this._studentProvider = studentProvider ?? throw new ArgumentNullException(nameof(studentProvider));            
         }
 
+        /// <summary>
+        /// Requirement #3 - an endpoint that returns all the courses a student is enrolled in
+        /// </summary>
+        /// <param name="studentId"></param>
+        /// <returns></returns>
         [HttpGet]
         [Route("{studentId}/courses")]
         public IActionResult GetStudentCourses(int studentId)

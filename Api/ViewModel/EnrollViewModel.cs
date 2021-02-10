@@ -1,13 +1,12 @@
-﻿using Data.Entities;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using System.ComponentModel.DataAnnotations;
+
 
 
 namespace Api.ViewModel
 {
+    /// <summary>
+    /// Added ViewModel to handle Ids
+    /// </summary>
     public class EnrollViewModel
     {
         [Required]

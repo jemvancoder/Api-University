@@ -39,7 +39,11 @@ namespace Api.Controllers
             this._logger = logger ?? throw new ArgumentNullException(nameof(logger));
         }
 
-
+        /// <summary>
+        /// Student Enrollment - Requirement #2 an endpoint that allows a student to enroll in a course
+        /// </summary>
+        /// <param name="model"></param>
+        /// <returns></returns>
         [HttpPost]
         [Route("enroll")]
         public IActionResult Enroll([FromBody] EnrollViewModel model)
